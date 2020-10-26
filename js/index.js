@@ -43,8 +43,7 @@ const navItems = [siteContent['nav']['nav-item-1'], siteContent['nav']['nav-item
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
-const navLinks = document.querySelectorAll('nav a')
-console.log(navLinks)
+const navLinks = document.querySelectorAll('header nav a')
 navLinks.forEach((link, i) => {link.textContent = navItems[i]})
 const mainImg = document.getElementById('cta-img')
 mainImg.src = siteContent['cta']['img-src']
@@ -64,3 +63,15 @@ const contactInfo = document.querySelectorAll('.contact p')
 contactInfo.forEach((item, i) => {item.textContent = contactPs[i]}) 
 const foot = document.querySelector('footer p')
 foot.textContent = siteContent['footer']['copyright']
+navLinks.forEach(link => {link.style.color = 'green'})
+const newNav1 = document.createElement('a')
+newNav1.textContent = 'Home'
+newNav1.href = '#'
+newNav1.style.color = 'green'
+const newNav2 = document.createElement('a')
+newNav2.textContent = 'React is Better'
+newNav2.href = '#'
+newNav2.style.color = 'purple'
+const nav = document.querySelector('nav')
+nav.prepend(newNav1)
+nav.appendChild(newNav2)
