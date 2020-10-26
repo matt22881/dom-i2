@@ -36,7 +36,31 @@ const siteContent = {
     "copyright" : "Copyright Great Idea! 2018"
   },
 };
-
+const contactPs = [siteContent['contact']['address'],siteContent['contact']['phone'],siteContent['contact']['email']]
+const cntCnt = [siteContent['main-content']['features-content'],siteContent['main-content']['about-content'],siteContent['main-content']['services-content'],siteContent['main-content']['product-content'],siteContent['main-content']['vision-content'],]
+const cntHeads = [siteContent['main-content']['features-h4'],siteContent['main-content']['about-h4'],siteContent['main-content']['services-h4'],siteContent['main-content']['product-h4'],siteContent['main-content']['vision-h4'],]
+const navItems = [siteContent['nav']['nav-item-1'], siteContent['nav']['nav-item-2'], siteContent['nav']['nav-item-3'], siteContent['nav']['nav-item-4'], siteContent['nav']['nav-item-5'], siteContent['nav']['nav-item-6']]
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+const navLinks = document.querySelectorAll('nav a')
+console.log(navLinks)
+navLinks.forEach((link, i) => {link.textContent = navItems[i]})
+const mainImg = document.getElementById('cta-img')
+mainImg.src = siteContent['cta']['img-src']
+const mainHead = document.querySelector('h1')
+mainHead.textContent = siteContent['cta']['h1']
+const mainBtn = document.querySelector('button')
+mainBtn.textContent = siteContent['cta']['button']
+const mainCntTopHead = document.querySelectorAll('.main-content h4')
+mainCntTopHead.forEach((head, i) => {head.textContent = cntHeads[i]})
+const mainCntCnt = document.querySelectorAll('.main-content p')
+mainCntCnt.forEach((cnt, i) => {cnt.textContent = cntCnt[i]})
+const midImg = document.getElementById('middle-img')
+midImg.src = siteContent['main-content']['middle-img-src']
+const contactHead = document.querySelector('.contact h4')
+contactHead.textContent = siteContent['contact']['contact-h4']
+const contactInfo = document.querySelectorAll('.contact p')
+contactInfo.forEach((item, i) => {item.textContent = contactPs[i]}) 
+const foot = document.querySelector('footer p')
+foot.textContent = siteContent['footer']['copyright']
