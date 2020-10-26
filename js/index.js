@@ -63,15 +63,26 @@ const contactInfo = document.querySelectorAll('.contact p')
 contactInfo.forEach((item, i) => {item.textContent = contactPs[i]}) 
 const foot = document.querySelector('footer p')
 foot.textContent = siteContent['footer']['copyright']
-navLinks.forEach(link => {link.style.color = 'green'})
-const newNav1 = document.createElement('a')
-newNav1.textContent = 'Home'
-newNav1.href = '#'
-newNav1.style.color = 'green'
-const newNav2 = document.createElement('a')
-newNav2.textContent = 'React is Better'
-newNav2.href = '#'
-newNav2.style.color = 'purple'
-const nav = document.querySelector('nav')
-nav.prepend(newNav1)
-nav.appendChild(newNav2)
+
+const changeStuff = () => {
+    navLinks.forEach(link => {link.style.color = 'green'})
+    const newNav1 = document.createElement('a')
+    newNav1.textContent = 'Home'
+    newNav1.href = '#'
+    newNav1.style.color = 'green'
+    const newNav2 = document.createElement('a')
+    newNav2.textContent = 'React is Better'
+    newNav2.href = '#'
+    newNav2.style.color = 'purple'
+    const nav = document.querySelector('nav')
+    nav.prepend(newNav1)
+    nav.appendChild(newNav2)
+    const font = document.createElement('link')
+    font.rel = 'stylesheet'
+    font.href = 'https://fonts.googleapis.com/css2?family=Syne+Tactile&display=swap'
+    const head = document.querySelector('head')
+    head.appendChild(font)
+    mainCntCnt.forEach(cnt => {cnt.style.fontFamily = "'Syne Tactile', cursive"})
+}
+
+mainBtn.addEventListener('click', changeStuff)
